@@ -6,12 +6,43 @@
     <title>คะแนนเก็บ - ครูณัฐวัฒน์</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Sarabun', sans-serif; background-color: #f8f9fa; }
-        iframe { width: 100%; height: 600px; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        /* ตกแต่งแท็บเลือกวิชา */
+        .nav-pills .nav-link {
+            color: #6c757d;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            margin-right: 10px;
+            border-radius: 50px;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #0d6efd; /* สีฟ้าเมื่อถูกเลือก */
+            color: white;
+            border-color: #0d6efd;
+            box-shadow: 0 4px 6px rgba(13, 110, 253, 0.3);
+        }
+        .nav-pills .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ตกแต่งกรอบ iframe */
+        .score-frame { 
+            width: 100%; 
+            height: 800px; /* ความสูงของตาราง */
+            border: none; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: white;
+        }
     </style>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">AutoDEV</a>
@@ -19,12 +50,55 @@
         </div>
     </nav>
 
-    <div class="container text-center">
-        <h2 class="fw-bold mb-4">📈 คะแนนเก็บ : อินเทอร์เน็ตในงานธุรกิจดิจิทัล</h2>
-        
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkr6I4fe_cq91Of_FCoRHde2PM6J5kreGMMvV70B-3kG_ieTt-zlc_cpkawF2XrYaq2aRrJFWfOWl/pubhtml?widget=true&amp;headers=false"></iframe>
-        
-    </div>
-</body>
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">📊 คะแนนเก็บรายวิชา</h2>
+            <p class="text-muted">เลือกรายวิชาเพื่อดูคะแนนสอบ</p>
+        </div>
 
+        <ul class="nav nav-pills justify-content-center mb-4" id="pills-tab" role="tablist">
+            
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-subject1-tab" data-bs-toggle="pill" data-bs-target="#pills-subject1" type="button" role="tab">
+                    วิชาอินเทอร์ในงานธุรกิจดิจิทัล ปวช.1
+                </button>
+            </li>
+            
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-subject2-tab" data-bs-toggle="pill" data-bs-target="#pills-subject2" type="button" role="tab">
+                    วิชาโปรแกรมฐานข้อมูล ปวช.1
+                </button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-subject3-tab" data-bs-toggle="pill" data-bs-target="#pills-subject3" type="button" role="tab">
+                    วิชากฎหมายธุรกรรมทางอิเล็กทรอนิกส์ ปวช.2
+                </button>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            
+            <div class="tab-pane fade show active" id="pills-subject1" role="tabpanel">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkr6I4fe_cq91Of_FCoRHde2PM6J5kreGMMvV70B-3kG_ieTt-zlc_cpkawF2XrYaq2aRrJFWfOWl/pubhtml?widget=true&amp;headers=false"></iframe>
+                <iframe class="score-frame" src="..."></iframe>
+            </div>
+            
+            <div class="tab-pane fade" id="pills-subject2" role="tabpanel">
+               <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkr6I4fe_cq91Of_FCoRHde2PM6J5kreGMMvV70B-3kG_ieTt-zlc_cpkawF2XrYaq2aRrJFWfOWl/pubhtml?widget=true&amp;headers=false"></iframe>
+               <iframe class="score-frame" src="..."></iframe>
+            </div>
+
+            <div class="tab-pane fade" id="pills-subject3" role="tabpanel">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkr6I4fe_cq91Of_FCoRHde2PM6J5kreGMMvV70B-3kG_ieTt-zlc_cpkawF2XrYaq2aRrJFWfOWl/pubhtml?widget=true&amp;headers=false"></iframe>
+                <iframe class="score-frame" src="..."></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
