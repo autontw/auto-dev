@@ -37,6 +37,21 @@
             box-shadow: 0 8px 15px rgba(0,0,0,0.15); 
             color: #0d6efd; /* เปลี่ยนสีตัวหนังสือ */
         }
+
+                    /* โค้ดสีไหลวิบวับ (Gradient Flow) */
+            .text-gradient {
+                    /* ปรับเปลี่ยนสีตรงนี้ได้ตามใจชอบ */
+                background: linear-gradient(45deg, #ff3366, #33ccff, #8c52ff); 
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: gradient-flow 3s linear infinite;
+        }
+
+            @keyframes gradient-flow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 100% 50%; }
+        }
     </style>
 </head>
 <body>
@@ -62,7 +77,9 @@
 
     <section class="hero-section">
         <div class="container">
-            <h1 id="typewriter" class="display-3 fw-bold text-dark"></h1>
+            <h1 class="display-3 fw-bold text-gradient">
+                Welcome to my website
+            </h1>
             <p class="lead text-muted" style="font-size: 32px;">ยินดีต้อนรับสู่เว็บไซต์ AutoDEV</p>
             <a href="contact.html" class="btn btn-warning btn-lg px-4 text-white">ติดต่อสอบถาม</a>
         </div>
@@ -107,21 +124,9 @@
     </div>
     
         <script>
-    const text = "Welcome to my website"; // ข้อความที่จะให้พิมพ์
-    const element = document.getElementById("typewriter");
-    let i = 0;
-
-    function typeWriter() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 70); // ความเร็วในการพิมพ์ (ยิ่งน้อยยิ่งเร็ว)
-        }
-    }
-
-    // สั่งให้เริ่มทำงานเมื่อเปิดเว็บ
-    window.onload = typeWriter;
-</script>
+            const text = "Welcome to my website"; 
+            ...
+        </script>    
 
 </body>
 </html>
